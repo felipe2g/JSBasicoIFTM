@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var name = prompt("Digite seu nome completo: ")
+
+        document.write(`<p>Seu nome possui ${name.length} caracteres</p>`)
+        document.write(`<p>A primeira letra do seu nome é ${name[0]}</p>`)
+        document.write(`<p>Seu nome convertido para letras maiúsculas ${name.toUpperCase()}</p>`)
+
+        var nameSplit = name.split(" ")
+
+        document.write(`<p>Seu nome possui ${nameSplit.length} palavras</p>`)
+    
+        document.write(`<p>Seu nome <span style='color:red;'>${name}</span> na cor vermelho</p>`)
+
+        var countStr = prompt("Digite um número inteiro")
+        var count = Number(countStr)
+
+        document.write(`Seu nome ${count} vezes na cor azul`)
+
+        for(var i = 0; i < count; i++) {
+            document.write(`<p style='color:blue;'>${name}</p>`)
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
