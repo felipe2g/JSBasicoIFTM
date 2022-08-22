@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        numeroInicial = 1
+        numeroFinal = 60
+        arrNumeros = []
+
+        do {
+            generatedNumber = Math.floor(Math.random() * (numeroFinal - numeroInicial + 1)) + numeroInicial
+
+            numberExistsOnArray = arrNumeros.indexOf(generatedNumber)
+
+            if(numberExistsOnArray < 0) {
+                arrNumeros.push(generatedNumber)
+            }
+        } while(arrNumeros.length < 6)
+
+        document.write(`${arrNumeros[0]} - ${arrNumeros[1]} - ${arrNumeros[2]} - ${arrNumeros[3]} - ${arrNumeros[4]} - ${arrNumeros[5]}`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

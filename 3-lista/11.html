@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+    <script>
+        cartasSorteadas = []
+
+        do {
+            generatedNumber = Math.floor(Math.random() * (27 - 1 + 1)) + 1
+
+            numberExistsOnArray = cartasSorteadas.indexOf(generatedNumber)
+
+            if(numberExistsOnArray < 0) {
+                cartasSorteadas.push(generatedNumber)
+            }
+        } while(cartasSorteadas.length < 12)
+
+        document.write("<h1>Jogue Truco</h1><p style='text-align:center;color:red;'><b>Cartas sorteadas</b></p>")
+
+        document.write(`
+            <div style="display: flex;justify-content:space-between;">
+                <h2>Cartas do jogador 1: </h2>
+                <div>
+                    <img src='/assets/cartas/carta${cartasSorteadas[0]}.png' />
+                    <img src='/assets/cartas/carta${cartasSorteadas[1]}.png' />
+                    <img src='/assets/cartas/carta${cartasSorteadas[2]}.png' />
+                </div>
+            </div>
+        `)
+        
+        document.write(`
+            <div style="display: flex;justify-content:space-between;">
+                <h2>Cartas do jogador 2: </h2>
+                <div>
+                    <img src='/assets/cartas/carta${cartasSorteadas[3]}.png' />
+                    <img src='/assets/cartas/carta${cartasSorteadas[4]}.png' />
+                    <img src='/assets/cartas/carta${cartasSorteadas[5]}.png' />
+                </div>
+            </div>
+        `)
+
+        document.write(`
+            <div style="display: flex;justify-content:space-between;">
+                <h2>Cartas do jogador 3: </h2>
+                <div>
+                    <img src='/assets/cartas/carta${cartasSorteadas[6]}.png' />
+                    <img src='/assets/cartas/carta${cartasSorteadas[7]}.png' />
+                    <img src='/assets/cartas/carta${cartasSorteadas[8]}.png' />
+                </div>
+            </div>
+        `)
+
+        document.write(`
+            <div style="display: flex;justify-content:space-between;">
+                <h2>Cartas do jogador 4: </h2>
+                <div>
+                    <img src='/assets/cartas/carta${cartasSorteadas[9]}.png' />
+                    <img src='/assets/cartas/carta${cartasSorteadas[10]}.png' />
+                    <img src='/assets/cartas/carta${cartasSorteadas[11]}.png' />
+                </div>
+            </div>
+        `)
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>

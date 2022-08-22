@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        #mainDiv {
+            background-color: dimgray;
+            padding: 20px;
+        }
+
+        li {
+            border-bottom: 1px solid #000;
+            padding: 8px 0px;
+        }
+    </style>
+    <script>
+        qtd = parseInt(prompt("Digite a quantidade de pessoas: "))
+        arrPessoas = []
+
+        for(var i=0; i< qtd; i++) {
+            pessoa = prompt("Digite o nome da pessoa: ")
+            arrPessoas.push(pessoa)
+        }
+
+        document.write("<h1 style='text-align: center;'>Ordem de apresentação dos grupos</h1>")
+
+        document.write(`<div id="mainDiv"> <ul> `)
+        
+        for(var j = 0; j < arrPessoas.length; j++) {
+            if(j == arrPessoas.length - 1) {
+                document.write(`<li style='border-bottom: 0px;'>${j + 1}° - ${arrPessoas[j]} </li>`)
+            } else {
+                document.write(`<li>${j + 1}° - ${arrPessoas[j]} </li>`)
+            }
+        }
+
+        document.write(`</ul></div>`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        quantidade = parseInt(prompt("Digite a quantidade de alunos"))
+        
+        soma = 0;
+
+        for(var i = 1; i <= quantidade; i++) {
+            idade = parseInt(prompt(`Digite a idade do ${i}o aluno: `))
+            soma = soma + idade
+        }
+
+        alert(`A idade média é: ${(soma/quantidade).toFixed(2)}`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        playerOneChoose = Math.floor(Math.random() * (2 - 0 + 1)) + 0
+        playerTwoChoose = Math.floor(Math.random() * (2 - 0 + 1)) + 0
+
+        arrOptions = ["Pedra", "Papel", "Tesoura"]
+
+        document.write(`<p>Jogador 1: ${arrOptions[playerOneChoose]}</p>`)
+        document.write(`<img width="100" src="/assets/jo-ken-po/${playerOneChoose}.png"/>`)
+        document.write(`<p>Jogador 2: ${arrOptions[playerTwoChoose]}</p>`)
+        document.write(`<img width="100" src="/assets/jo-ken-po/${playerTwoChoose}.png"/>`)
+
+        if(playerOneChoose == 0) {
+            if(playerTwoChoose == 0) {
+                document.write("<p style='color: green'><b>Empate</b></p>")
+            }
+
+            if(playerTwoChoose == 1) {
+                document.write("<p style='color: green'><b>Jogador 2 ganhou</b></p>")
+            }
+
+            if(playerTwoChoose == 2) {
+                document.write("<p style='color: green'><b>Jogador 1 ganhou</b></p>")
+            }
+        }
+
+        if(playerOneChoose == 1) {
+            if(playerTwoChoose == 0) {
+                document.write("<p style='color: green'><b>Jogador 1 ganhou</b></p>")
+            }
+
+            if(playerTwoChoose == 1) {
+                document.write("<p style='color: green'><b>Empate</b></p>")
+            }
+
+            if(playerTwoChoose == 2) {
+                document.write("<p style='color: green'><b>Jogador 2 ganhou</b></p>")
+            }
+        }
+
+        if(playerOneChoose == 2) {
+            if(playerTwoChoose == 0) {
+                document.write("<p style='color: green'><b>Jogador 2 ganhou</b></p>")
+            }
+
+            if(playerTwoChoose == 1) {
+                document.write("<p style='color: green'><b>Jogador 1 ganhou</b></p>")
+            }
+
+            if(playerTwoChoose == 2) {
+                document.write("<p style='color: green'><b>Empate</b></p>")
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
