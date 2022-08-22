@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            width: 100%;
+        }
+
+        th {
+            text-align: center;
+        }
+        
+        tr, td, th, table {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        inteiroPositivoMaiorOuIgualADois = prompt("Digite um número inteiro positivo maior ou igual a dois")
+        document.write(`
+            <table>
+                <tr>
+                    <th>Base Decimal</th>
+                    <th>Base binária</th>
+                    <th>Base hexadecimal</th>
+                </tr>
+        `)
+        for(var i = 0; i <= inteiroPositivoMaiorOuIgualADois; i++) {
+            document.write(`
+                <tr>
+                    <td>${i}</td>
+                    <td>${i.toString(2)}</td>
+                    <td>${i.toString(8)}</td>
+                </tr>
+            `)
+        }
+        document.write("</table>")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var text = prompt("Digite um texto qualquer: ")
+
+        var textSplit = text.split(" ")
+        var letters = []
+
+        // Cria o array de letras iniciais únicas
+        for(var i = 0; i < textSplit.length; i++) {
+            firstLetter = textSplit[i].charAt(0)
+
+            haveOnArray = letters.find(letter => letter === firstLetter)
+
+            if (!haveOnArray) {
+                letters.push(firstLetter)
+            }
+        }
+
+        // Imprime na tela as palavras separadas por letras
+        for(var j = 0; j < letters.length; j++) {
+            document.write(`<p> Palavras iniciadas com a letra ${letters[j]} :`)
+            document.write(`<ul>`)
+            for(var w = 0; w < textSplit.length; w++) {
+                if(textSplit[w].charAt(0) === letters[j]) {
+                    document.write(`<li> ${textSplit[w]} </li>`)
+                }
+            }
+            document.write(`</ul>`)
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

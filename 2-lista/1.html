@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title></title>
+        <script type="text/javascript">
+            var firstName = prompt("Qual seu primeiro nome?");
+            var secondName = prompt("Quanl seu segundo nome?");
+
+            var count = +(prompt("Quantas vezes deverá ser impressa?"));
+
+            var color = prompt("Qual cor você deseja imprimir seu nome?")
+
+            for (i=1; i <= count; i++) {
+                var colorToPrint;
+
+                if(i % 2 == 0) {
+                    colorToPrint = color
+                } else {
+                    colorToPrint = "black"
+                }
+
+                document.write(`<p style="color:${colorToPrint};">${firstName} ${secondName}</p>`)
+            }
+            </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        phrase = prompt("Digite a frase a ser verificada: ")
+
+        phraseWithoutBlankSpaces = phrase.replaceAll(" ", "")
+        reversedPhrase = ""
+
+        for(var i=phraseWithoutBlankSpaces.length - 1; i >= 0; i--) {
+            reversedPhrase += phraseWithoutBlankSpaces[i]
+        }
+
+        document.write(`<p>Texto: ${phrase}</p>`)
+
+        if(phraseWithoutBlankSpaces === reversedPhrase) {
+            document.write("<p style='color:green'> É UM PALÍNDROMO! </p>")
+        } else {
+            document.write("<p style='color:red'> NÃO É UM PALÍNDROMO! </p>")
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

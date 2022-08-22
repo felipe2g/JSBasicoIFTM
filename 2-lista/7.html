@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var text = prompt("Digite um texto qualquer: ")
+        var charToUse = prompt("Digite um caractere para filtragem das palavras: ")
+
+        var textSplit = text.split(" ")
+
+        for(i=0; i < textSplit.length; i++) {
+            if(textSplit[i].charAt(0) == charToUse) {
+                document.write(`<p>${textSplit[i]}</p>`)
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
