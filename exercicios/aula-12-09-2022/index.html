@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            display: block;
+        }
+
+        form {
+            border: 1px solid #121212;
+            padding: 16px;
+        }
+
+        input[type="button"] {
+            display: block;
+            padding: 8px;
+            width: 200px;
+            margin: auto;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            margin: 4px 0;
+        }
+        span {
+            display: block;
+            color: red;
+            font-size:10px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function handleSubmitForm() {
+            inputs = document.getElementsByTagName("input");
+            tipos = ["TEXT", "TEL", "NUMBER"];
+            for (i=0; i<inputs.length; i++) {
+                if ((tipos.includes(inputs[i].type.toUpperCase())) && (!inputs[i].value)) {
+                    document.getElementById(`${inputs[i].name.toUpperCase()}ERROR`).innerHTML = `${inputs[i].name} está vazio! Tente novamente`;
+                    inputs[i].focus();
+                }
+            }
+        }
+
+        function cleanForm(field) {
+            document.getElementById(field).innerHTML = ""
+        }
+        
+    </script>
+</head>
+<body>
+    <form>
+        <label>Nome</label>
+        <input type="text" name="NOME" id="nameInput" onkeypress="cleanForm('NOMEERROR')">
+        <span id="NOMEERROR"></span>
+
+        <label>Endereço</label>
+        <input type="text" name="ENDERECO" id="addressInput" onkeypress="cleanForm('ENDERECOERROR')">
+        <span id="ENDERECOERROR"></span>
+
+        <label>Telefone</label>
+        <input type="tel" name="TELEFONE" id="addressInput" onkeypress="cleanForm('TELEFONEERROR')">
+        <span id="TELEFONEERROR"></span>
+
+        <label>Idade</label>
+        <input type="number" name="IDADE" id="addressInput" onkeypress="cleanForm('IDADEERROR')">
+        <span id="IDADEERROR"></span>
+
+
+        <input type="button" value="Enviar" onclick="handleSubmitForm()">
+    </form>
+</body>
+</html>
