@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de opções</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function handleUserName() {
+            var userName = window.localStorage.getItem("userName")
+            console.log("userName => ", userName)
+
+            document.getElementById("userName").innerText = userName
+        }
+    </script>
+</head>
+
+<body onload="handleUserName()">
+    <main id="mainMenu">
+        <h1 id="menuTitle"><label id="userName"></label>, seja bem-vindo ao jogo dos Felinos!</h1>
+        <button id="logInAsInvitedButton" onclick="handleGoToFelinePage()">Entrar como convidado</button>
+    </main>
+    <script src="./script.js"></script>
+</body>
+
+</html>

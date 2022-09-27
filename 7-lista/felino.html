@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo dos felinos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main id="mainFeline">
+
+        <div class="felineDiv">
+            <img class="felineImg" src="./img/gato01.gif" alt="Um gatinho redondo" onclick="handleFirstCat()">
+            <span>Clique em mim</span>
+        </div>
+        <div class="felineDiv">
+            <img class="felineImg" src="./img/gato02.gif" alt="Um gatinho redondo" onclick="handleSecondCat()">
+            <p>Clique sobre mim várias vezes!<br>Carinhos: <span id="kindnessCount">0</span></p>
+
+        </div>
+        <div class="felineDiv">
+            <img class="felineImg" src="./img/gato03.gif" alt="Um gatinho redondo" id="thirdCat"
+                onmouseenter="handleThirdCatOnMouseIn()" onmouseout="handleThirdCatOnMouseOut()">
+            <span>Passe o cursor do mouse sobre mim!</span>
+        </div>
+        <div class="felineDiv">
+            <img class="felineImg" src="./img/gato04.gif" alt="Um gatinho redondo" onmouseenter="handleFourthItemIn()"
+                onmouseleave="handleFourthItemOut()">
+            <span id="catSong">lá lá lá lá lá lá</span>
+        </div>
+        <div class="felineDiv">
+            <img class="felineImg" src="./img/gato05.gif" alt="Um gatinho redondo">
+            <form>
+                <input type="button" id="luckyNumberGeneratorButton" value="Gerar numero da sorte"
+                    onclick="generateLuckyNumber()">
+                <input type="text" name="luckyNumber" id="luckyNumber">
+            </form>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+
+</html>
