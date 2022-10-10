@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #linkShow {
+            color: blue;
+        }
+
+        label,
+        input[type="text"],
+        a {
+            display: block;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        a,
+        label,
+        input[type="button"] {
+            margin-top: 16px;
+        }
+    </style>
+    <script>
+        function goToUserPage() {
+            window.location.href = "listarUsuario.html"
+        }
+
+        function createUser() {
+            username = document.getElementById("userInput").value
+            password = document.getElementById("passwordInput").value
+
+            if (!username) {
+                alert("Por favor, digite um usuário")
+                document.getElementById("userInput").focus()
+                return;
+            }
+
+            if (!password) {
+                alert("Por favor, digite uma senha")
+                document.getElementById("passwordInput").focus()
+                return;
+            }
+
+            window.localStorage.setItem("user", JSON.stringify({ username, password }))
+
+            alert("Usuário criado com sucesso!")
+        }
+
+        function clearFields() {
+            document.getElementById("userInput").value = ""
+            document.getElementById("passwordInput").value = ""
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <label for="userInput">Usuario</label>
+        <input type="text" name="userInput" id="userInput">
+
+        <label for="passwordInput">Senha</label>
+        <input type="text" name="passwordInput" id="passwordInput">
+
+        <input type="button" value="Cadastrar" onclick="createUser()">
+        <input type="button" value="Limpar" onclick="clearFields()">
+
+    </form>
+    <a onclick="goToUserPage()" id="linkShow">Mostrar usuário cadastrado</a>
+</body>
+
+</html>
