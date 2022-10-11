@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var idCont1;
+        var contador = 0;
+
+        function play() {
+            idCron1 = setInterval(incrementar, 1000)
+            statusBtns(true, false, false)
+        }
+
+        function pausar() {
+            clearInterval(idCron1)
+            statusBtns(false, true, false)
+        }
+
+        function parar() {
+            pausar()
+            contador = 0
+            document.getElementById("cont").innerHTML = contador
+            statusBtns(false, true, true)
+        }
+
+        function incrementar() {
+            document.getElementById("cont").innerHTML = ++contador;
+        }
+
+        function statusBtns(statusPlay, statusPause, statusStop) {
+            document.getElementById("btnPlay").disabled = statusPlay
+            document.getElementById("btnPause").disabled = statusPause
+            document.getElementById("btnStop").disabled = statusStop
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="button" value="Play" id="btnPlay" onclick="play()">
+        <input type="button" value="Pause" id="btnPause" onclick="pausar()" disabled>
+        <input type="button" value="Stop" id="btnStop" onclick="parar()" disabled>
+    </form>
+    <p>Contador: <span id="cont">0</span></p>
+</body>
+
+</html>

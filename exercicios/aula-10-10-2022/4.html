@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var idCron;
+        var slidePos = 0;
+        var slideShow = [
+            { image: "celular01.jpg", nome: "iPhone 13", descricao: "Descrição do produto 1", valor: "R$3000,00" },
+            { image: "celular02.jpg", nome: "iPhone XS", descricao: "Descrição do produto 2", valor: "R$4500,00" },
+            { image: "celular03.jpg", nome: "iPhone 8", descricao: "Descrição do produto 3", valor: "R$6000,00" },
+        ]
+
+        function play() {
+            idCron = setInterval(mudarImg, 1000)
+        }
+
+        function mudarImg() {
+            slidePos++;
+            if (slidePos == slideShow.length) { slidePos = 0 }
+
+            document.getElementById("slideShow").src = `./img/${slideShow[slidePos].image}`
+            document.getElementById("nome").innerText = slideShow[slidePos].nome
+            document.getElementById("descricao").innerText = slideShow[slidePos].descricao
+            document.getElementById("preco").innerText = slideShow[slidePos].valor
+        }
+
+        function pausar() {
+            clearInterval(idCron)
+        }
+
+    </script>
+</head>
+
+<body onload="play()">
+    <img id="slideShow" src="./img/celular01.jpg" alt="" onmouseenter="pausar()" onmouseleave="play()">
+    <h1 id="nome">iPhone</h1>
+    <p id="descricao">Descrição do produto 1</p>
+    <p id="preco">R$10000,00</p>
+</body>
+
+</html>
