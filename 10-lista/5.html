@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function make() {
+            var qtdNomes = parseInt(prompt("Digite a quantidade de nomes: "))
+            var vetNomes = []
+            var count = 0;
+
+            console.log(qtdNomes)
+
+            for (var i = 0; i < qtdNomes; i++) {
+                var nome = prompt("Digite o nome: ")
+
+                vetNomes.push(nome)
+            }
+
+            const interval = setInterval(printName, 1000)
+
+            function printName() {
+                document.write(`<p>${vetNomes[count]}</p>`)
+                count++
+                if (count == vetNomes.length) {
+                    clearInterval(interval)
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body onload="make()">
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var nome = prompt("Digite o nome")
+        var fontSize = 14;
+
+        if (nome == null) {
+            document.write("vazio")
+        } else {
+            document.write(nome)
+            setInterval(growFont, 500)
+        }
+
+        function growFont() {
+            if (fontSize >= 40) { return }
+
+            fontSize += 2
+            document.body.style.fontSize = `${fontSize}px`
+        }
+    </script>
+</head>
+
+<body>
+    <span id="myName"></span>
+</body>
+
+</html>

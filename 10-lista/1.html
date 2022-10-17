@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function moveText() {
+            setTimeout(() => {
+                var firstText = document.getElementById("firstText").value
+
+                document.getElementById("secondText").value = firstText
+                document.getElementById("firstText").value = ""
+            }, 2000)
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="firstText" id="firstText">
+        <input type="text" name="secondText" id="secondText">
+        <input type="button" value="Mover" onclick="moveText()">
+    </form>
+</body>
+
+</html>
