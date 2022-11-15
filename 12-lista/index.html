@@ -76,7 +76,25 @@
 
         function validarTelefoneDois() {
             valor = document.getElementById("telefoneDois").value.trim();
-            padrao = /^\+\d{2}\(\d{2}\)\d{5}-\d{4}$/;
+            padrao = /^[(]\d{2,3}[)]\d{5}-[0-9]{4}$/;
+            (padrao.test(valor) ? alert("valida") : alert("invalido"));
+        }
+
+        function validarAlturaDeUmaPessoa() {
+            valor = document.getElementById("altura").value.trim();
+            padrao = /^1[.,][3-9]|1[.,][3-9]\d|2[.,]50|2[.,][0-4]\d|2[.,]5$/;
+            (padrao.test(valor) ? alert("valida") : alert("invalido"));
+        }
+
+        function validarFaturamento() {
+            valor = document.getElementById("faturamento").value.trim();
+            padrao = /^(R\$)\d\d{0,2}(\.\d{3}){0,3}(\,\d{1,2})$/;
+            (padrao.test(valor) ? alert("valida") : alert("invalido"));
+        }
+
+        function validarFaturamento() {
+            valor = document.getElementById("faturamento").value.trim();
+            padrao = /^(R\$)\d\d{0,2}(\.\d{3}){0,3}(\,\d{1,2})$/;
             (padrao.test(valor) ? alert("valida") : alert("invalido"));
         }
     </script>
@@ -139,6 +157,26 @@
         <input type="text" name="telefone" id="telefone" value="+55(11)99999-9999"
             onkeypress="inserirMascara('telefone', '+99(99)99999-9999')">
         <button onclick="validarTelefone()">Validar</button>
+    </div>
+    <div>
+        <label for="telefoneDois">Telefone Dois</label>
+        <input type="text" name="telefoneDois" id="telefoneDois" value="(111)99999-9999">
+        <button onclick="validarTelefoneDois()">Validar</button>
+    </div>
+    <div>
+        <label for="altura">Altura</label>
+        <input type="text" name="altura" id="altura" value="1.5">
+        <button onclick="validarAlturaDeUmaPessoa()">Validar</button>
+    </div>
+    <div>
+        <label for="faturamento">Faturamento</label>
+        <input type="text" name="faturamento" id="faturamento" value="R$289,32">
+        <button onclick="validarFaturamento()">Validar</button>
+    </div>
+    <div>
+        <label for="faturamento">Faturamento</label>
+        <input type="text" name="faturamento" id="faturamento" value="R$289,32">
+        <button onclick="validarFaturamento()">Validar</button>
     </div>
 </body>
 
