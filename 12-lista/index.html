@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jwifi.js"></script>
+    <script>
+        function validarDtNascimento() {
+            valor = document.getElementById("dtNascimento").value.trim();
+            padrao = /[0-9]{2}\/[0-9]{2}\/[0-9]{4}/;
+            anotherRegex = /[0-9]{2}\/[0-9]{2}\/[0-9]{2}/
+
+            if (padrao.test(valor) || anotherRegex.test(valor)) {
+                alert("valida")
+            } else {
+                alert("inválido")
+            }
+        }
+
+        function validarCpf() {
+            valor = document.getElementById("cpf").value.trim();
+            padrao = /[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}/;
+            (padrao.test(valor) ? alert("valida") : alert("invalido"));
+        }
+
+        function validarMatriculaAluno() {
+            valor = document.getElementById("matriculaAluno").value.trim();
+            padrao = /IFTM|iftm-[0-9]{3}\/[0-9]{3}-[0-9]{2}/;
+            (padrao.test(valor) ? alert("valida") : alert("invalido"));
+        }
+
+        function validarCodigoDisciplinaAlunoIftm() {
+            valor = document.getElementById("codigoDisciplinaAlunoIftm").value.trim();
+            padrao = /MT-[0-9]{2}.[0-9]{3}-IFTM/;
+            (padrao.test(valor) ? alert("valida") : alert("invalido"));
+        }
+
+        function validarCodigoDisciplinaAlunoIftmDois() {
+            valor = document.getElementById("codigoDisciplinaAlunoIftmDois").value.trim();
+            padrao = /MT-[0-9]{2}.[0-9]{3}-IFTM|iftm/;
+            (padrao.test(valor) ? alert("valida") : alert("invalido"));
+        }
+
+        function validarCodigoDisciplinaAlunoIftmDois() {
+            valor = document.getElementById("codigoDisciplinaAlunoIftmDois").value.trim();
+            padrao = /MT-[0-9]{2}.[0-9]{3}-IFTM|iftm/;
+            (padrao.test(valor) ? alert("valida") : alert("invalido"));
+        }
+
+        function validarCodigoDisciplinaAlunoIftmTres() {
+            valor = document.getElementById("codigoDisciplinaAlunoIftmTres").value.trim();
+            padrao = /M\s?T-[0-9]{2}.[0-9]{3}-I\s?F\s?T\s?M|i\s?f\s?t\s?m/;
+            (padrao.test(valor) ? alert("valida") : alert("invalido"));
+        }
+
+        function validarCodigoDisciplinaAlunoIftmQuatro() {
+            valor = document.getElementById("codigoDisciplinaAlunoIftmQuatro").value.trim();
+            padrao = /^(M|m)\s{0,1}(T|t)-[0-9]{2}.[0-9]{3}-(I|i)\s{0,1}(F|f)\s{0,1}(T|t)\s{0,1}(M|m)\s(Uberlândia Centro|Uberândia)$/;
+            (padrao.test(valor) ? alert("valida") : alert("invalido"));
+        }
+
+        function validarNomeCampus() {
+            valor = document.getElementById("nomeCampus").value.trim();
+            padrao = /^(IFTM campus Uberlândia|IFTM campus Uberlândia Centro)$/;
+            (padrao.test(valor) ? alert("valida") : alert("invalido"));
+        }
+
+        function validarTelefone() {
+            valor = document.getElementById("telefone").value.trim();
+            padrao = /^\+\d{2}\(\d{2}\)\d{5}-\d{4}$/;
+            (padrao.test(valor) ? alert("valida") : alert("invalido"));
+        }
+
+        function validarTelefoneDois() {
+            valor = document.getElementById("telefoneDois").value.trim();
+            padrao = /^\+\d{2}\(\d{2}\)\d{5}-\d{4}$/;
+            (padrao.test(valor) ? alert("valida") : alert("invalido"));
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <label for="dtNascimento">Data de Nascimento</label>
+        <input type="text" name="dtNascimento" id="dtNascimento" value="24/06/1996">
+        <button onclick="validarDtNascimento()">Validar</button>
+    </div>
+    <div>
+        <label for="cpf">CPF</label>
+        <input type="text" name="cpf" id="cpf" value="123.456.789-00"
+            onkeypress="inserirMascara('cpf', '999.999.999-99')">
+        <button onclick="validarCpf()">Validar</button>
+    </div>
+    <div>
+        <label for="matriculaAluno">Matrícula do Aluno</label>
+        <input type="text" name="matriculaAluno" id="matriculaAluno" value="IFTM-123/456-78">
+        <button onclick="validarMatriculaAluno()">Validar</button>
+    </div>
+    <div>
+        <label for="codigoDisciplinaAlunoIftm">Código Disciplina Aluno</label>
+        <input type="text" name="codigoDisciplinaAlunoIftm" id="codigoDisciplinaAlunoIftm" value="MT-12.345-IFTM"
+            onkeypress="inserirMascara('codigoDisciplinaAlunoIftm', 'MT-99.999-IFTM')">
+        <button onclick="validarCodigoDisciplinaAlunoIftm()">Validar</button>
+    </div>
+    <div>
+        <label for="codigoDisciplinaAlunoIftmDois">Código Disciplina Aluno 2</label>
+        <input type="text" name="codigoDisciplinaAlunoIftmDois" id="codigoDisciplinaAlunoIftmDois"
+            value="MT-12.345-IFTM" onkeypress="inserirMascara('codigoDisciplinaAlunoIftmDois', 'MT-99.999-IFTM')">
+        <button onclick="validarCodigoDisciplinaAlunoIftmDois()">Validar</button>
+    </div>
+    <div>
+        <label for="codigoDisciplinaAlunoIftmDois">Código Disciplina Aluno 2</label>
+        <input type="text" name="codigoDisciplinaAlunoIftmDois" id="codigoDisciplinaAlunoIftmDois"
+            value="MT-12.345-IFTM" onkeypress="inserirMascara('codigoDisciplinaAlunoIftmDois', 'MT-99.999-IFTM')">
+        <button onclick="validarCodigoDisciplinaAlunoIftmDois()">Validar</button>
+    </div>
+    <div>
+        <label for="codigoDisciplinaAlunoIftmTres">Código Disciplina Aluno 3</label>
+        <input type="text" name="codigoDisciplinaAlunoIftmTres" id="codigoDisciplinaAlunoIftmTres"
+            value="MT-12.345-IFTM">
+        <button onclick="validarCodigoDisciplinaAlunoIftmTres()">Validar</button>
+    </div>
+    <div>
+        <label for="codigoDisciplinaAlunoIftmQuatro">Código Disciplina Aluno 4</label>
+        <input type="text" name="codigoDisciplinaAlunoIftmQuatro" id="codigoDisciplinaAlunoIftmQuatro"
+            value="MT-11.333-IFTM Uberlândia Centro">
+        <button onclick="validarCodigoDisciplinaAlunoIftmQuatro()">Validar</button>
+    </div>
+    <div>
+        <label for="nomeCampus">Nome do Campus</label>
+        <input type="text" name="nomeCampus" id="nomeCampus" value="IFTM campus Uberlândia Centro">
+        <button onclick="validarNomeCampus()">Validar</button>
+    </div>
+    <div>
+        <label for="telefone">Telefone</label>
+        <input type="text" name="telefone" id="telefone" value="+55(11)99999-9999"
+            onkeypress="inserirMascara('telefone', '+99(99)99999-9999')">
+        <button onclick="validarTelefone()">Validar</button>
+    </div>
+</body>
+
+</html>
