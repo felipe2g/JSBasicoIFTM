@@ -16,7 +16,7 @@ function recordNewUser(user, password) {
     fetch(file)
         .then(response => response.json())
         .then(content => checkUserCadastro(content, user, password))
-        .catch(err => alert("Problema na leitura do JSON!"))
+        .catch(err => alert("Problema na leitura do JSON!" + err))
 }
 
 function checkUserCadastro(content, user, password) {
