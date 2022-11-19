@@ -1,3 +1,0 @@
-function valida() {
-	document.getElementById("")
-}
