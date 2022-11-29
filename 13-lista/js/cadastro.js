@@ -1,10 +1,10 @@
 function validateCadastro() {
     user = document.getElementById("user").value
-    password = document.getElementById("password").value
+    pwd = document.getElementById("password").value
     confirmPassword = document.getElementById("confirmPassword").value
 
     if (!user) alert("Usuário em branco. Informe um usuário")
-    else if (!password) alert("Senha em branco. Informe uma senha")
+    else if (!pwd) alert("Senha em branco. Informe uma senha")
     else if (!confirmPassword) alert("Confirmar senha em branco. Informe uma senha")
     else if (confirmPassword != password) alert("Senhas diferentes. Verifique")
     else recordNewUser(user, password)
