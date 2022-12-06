@@ -8,6 +8,15 @@ var imgAtual = 0;
 // matriz: ira armazenar o status do jogo (ira conter apenas "0" e "1") em uma matriz de 3x3
 var matriz;
 
+// Som de jogada
+var playSound = new Audio('sound/bip.aac');
+
+//Som de vitória
+var winSound = new Audio('sound/confirmation.mp3');
+
+//Som Inicio de jogo
+var fightSound = new Audio('sound/fight.mp3');
+
 //--------------------------------------------------------------------------------------
 // matriz vai ter uma estrutura semelhante a essa após executar a função criarMatriz
 // matriz = [[,,],[,,],[,,]];
@@ -52,36 +61,47 @@ function criarTabuleiro() {
   }
 
   document.getElementById("playerOneName").classList.add("actualPlayer");
+
+  fightSound.play()
 }
 
 //--------------------------------------------------------------------------------------
 // Inseri uma imagem (X ou 0) em cada casa do tabuleiro ao clicar sobre cada uma dela
 function inserirImg(evento) {
-  // Atualiza o tabuleiro no navegador com uma imagem de um 0 (circulo) ou de um X (xis)
-  document.getElementById(evento.currentTarget.id).classList.add(imagens[imgAtual]);
-
   // Atualiza a matriz do tabuleiro contendo a representacao do tabuleiro
   // evento.currentTarget.id contém o id de cada casa do tabuleiro. Ex: "0_0" é a casa
   // linha:0 e coluna:0 do tabuleiro
   vetIndices = evento.currentTarget.id.split("_");
+
+  console.log(matriz)
+  if (matriz[parseInt(vetIndices[0])][parseInt(vetIndices[1])] !== '') {
+    return
+  }
+
+  // Atualiza o tabuleiro no navegador com uma imagem de um 0 (circulo) ou de um X (xis)
+  document.getElementById(evento.currentTarget.id).classList.add(imagens[imgAtual]);
+
   // Armazena na matriz, na mesma posição que foi clicado no tabuleiro, o valor "0" (se for um circulo) ou o valor "1" (se for o Xis)
   matriz[parseInt(vetIndices[0])][parseInt(vetIndices[1])] = String(imgAtual) == 0 ? -1 : 1;
 
   // Atualiza para a próxima imagem: 0 (circulo) e 1 (xis)
   (imgAtual >= 1) ? imgAtual = 0 : imgAtual++;
 
+  playSound.play()
+
   // Sempre que o usuário clicar sobre uma casa do tabuleiro verifica se já houve um ganhador: "000" ou "111"
   var haveWinner = checkGanhador();
 
   if (haveWinner == 999) {
-    alertWifi(`Empate!`, false, 0, "", "100")
+    alertWifi(`Empate!`, false, 0, "", "28")
     return
   }
 
   if (haveWinner) {
+    winSound.play()
     var winner = haveWinner == -1 ? "Jogador 1" : "Jogador 2"
 
-    alertWifi(`${winner} vencedor!`, false, 0, "", "100")
+    alertWifi(`${winner} vencedor!`, false, 0, "", "28")
     return
   }
 

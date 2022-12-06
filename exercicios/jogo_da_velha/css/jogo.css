@@ -1,3 +1,26 @@
+@keyframes lightsOnOff {
+    0% {
+        background-color: green;
+    }
+
+    25% {
+        background-color: #121212;
+    }
+
+    50% {
+        background-color: green;
+    }
+
+    75% {
+        background-color: #121212;
+    }
+
+    100% {
+        background-color: green;
+    }
+}
+
+
 * {
     margin: 0px;
     box-sizing: border-box;
@@ -6,21 +29,21 @@
 
 #mainTabuleiro {
     display: flex;
-    height: 100vh;
+    height: 80vh;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
 
 #tabuleiro {
-    width: 600px;
+    width: 300px;
     overflow: auto;
     background-color: black;
 }
 
 .boxTabuleiro {
     width: 33.33%;
-    height: 200px;
+    height: 100px;
     border: 1px solid black;
     float: left;
     background-color: 121212;
@@ -34,6 +57,7 @@
 .imgTabuleiro {
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .imgXis {
@@ -101,4 +125,8 @@
     background-color: green;
     padding: 18px;
     border-radius: 5px;
+    animation-name: lightsOnOff;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
