@@ -73,8 +73,16 @@ function inserirImg(evento) {
   // Sempre que o usuário clicar sobre uma casa do tabuleiro verifica se já houve um ganhador: "000" ou "111"
   var haveWinner = checkGanhador();
 
+  if (haveWinner == 999) {
+    alertWifi(`Empate!`, false, 0, "", "100")
+    return
+  }
+
   if (haveWinner) {
-    console.log("O PLAYER QUE VENCEU FOI => ", haveWinner)
+    var winner = haveWinner == -1 ? "Jogador 1" : "Jogador 2"
+
+    alertWifi(`${winner} vencedor!`, false, 0, "", "100")
+    return
   }
 
 }
@@ -110,12 +118,40 @@ function checkGanhador() {
     }
   }
 
+  for (i = 0; i < 3; i++) {
+    var somaColuna = 0;
+    for (j = 0; j < 3; j++) {
+      somaColuna += matriz[j][i]
+    }
+
+    if (somaColuna == 3) {
+      return 1
+    }
+
+    if (somaColuna == -3) {
+      return -1
+    }
+  }
+
   if (diagonalPrincipal == 3 || diagonalOposta == 3) {
     return 1
   }
 
   if (diagonalPrincipal == -3 || diagonalOposta == -3) {
     return -1
+  }
+
+  var qtd = 0;
+  for (k = 0; k < 3; k++) {
+    for (j = 0; j < 3; j++) {
+      if (matriz[k][j] !== '') {
+        qtd++;
+      }
+    }
+  }
+
+  if (qtd == 9) {
+    return 999;
   }
 }
 
@@ -140,4 +176,8 @@ function goToGame() {
 
   window.location.replace("jogo.html")
 
+}
+
+function redirectToPlayersPage() {
+  window.location.replace("players.html")
 }
