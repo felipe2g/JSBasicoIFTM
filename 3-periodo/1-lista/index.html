@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Document</title>
+    <script>
+        vetAges = [10, 21, 31, 40];
+        mediaAritmetica = []
+        idadesImpares = []
+
+        var soma = vetAges.reduce((prev, curr) => {
+            return prev + curr
+        })
+        document.write(`<p>Soma das idades = ${soma}</p>`);
+
+        // a- A média aritmética simples das idades
+        var media = vetAges.reduce((prev, curr) => {
+            return prev + curr
+        }) / vetAges.length
+        document.write(`<p>Média aritmética = ${soma / vetAges.length} </p>`);
+
+        // b- A maior idade
+        var maiorIdade = vetAges.reduce((prev, curr) => {
+            if (prev > curr) {
+                return prev
+            }
+
+            return curr
+        })
+        document.write(`<p>A maior idade = ${maiorIdade}</p>`);
+
+        // c- As idades ímpares
+        document.write(`<label>Idades ímpares = </label>`);
+        vetAges.map((item) => {
+            if (item % 2 != 0) document.write(`<label>${item} </label>`)
+        })
+        
+        // d- Verificar se todos são maiores de idade (idade >= 18); Retorno: true ou false
+        var todosMaiores = true
+        vetAges.map((item) => {
+            if(item < 18) {
+                todosMaiores = false
+            }
+        })
+        document.write(`<p>Todos maiores = ${todosMaiores} </p>`);
+
+        // e- Verificar se todas as idades são maiores ou iguais a um valor informado pelo usuário
+        var numeroInformado = prompt(`Digite um número:`, 8)
+        var algumNumeroMenor = false
+
+        vetAges.map((item) => {
+            if(item < numeroInformado) {
+                algumNumeroMenor = true
+            }
+        })
+
+        document.write(`<p>Algum número menor que ${numeroInformado} = ${algumNumeroMenor} </p>`);
+
+        // f- Exibir todas as idades maiores ou iguais a determinada idade
+        var idadeInformada = prompt(`Digite a idade: `, 12)
+        document.write(`<label>Idades maiores ou iguais a ${idadeInformada} = </label>`);
+        vetAges.map((item) => {
+            if(item >= idadeInformada) {
+                document.write(`<label>${item} </label>`)
+            }
+        })
+
+        // g- A média das idades das pessoas com idades maiores ou iguais a determinada idade
+        let qtdIdades = 0
+        var mediaComparada = vetAges.reduce((prev, curr, index, array) => {
+            if(index == 1) {
+                valor = 0
+                if(prev >= idadeInformada) {
+                    valor = valor + prev
+                    qtdIdades++
+                }
+
+                if(curr >= idadeInformada) {
+                    valor = valor + curr
+                    qtdIdades++
+                }
+
+                return valor
+            }
+
+            if(curr >= idadeInformada) {
+                qtdIdades++
+                return prev + curr
+            }
+        }) / qtdIdades
+
+        document.write(`<p>A média das idades das pessoas com idades maiores ou iguais a ${idadeInformada} = ${mediaComparada} </p>`);
+        
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
