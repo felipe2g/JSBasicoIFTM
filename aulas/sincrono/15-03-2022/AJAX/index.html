@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax - Primeira aplicação</title>
+    <script>
+        function getTextServer() {
+            var xhttp = new XMLHttpRequest();
+            var filename = "user.json";
+
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Typical action to be performed when the document is ready:
+                    // document.getElementById("textServer").innerHTML = xhttp.responseText;
+                    const user = JSON.parse(xhttp.responseText);
+
+                    document.getElementById("textServer").innerHTML = user.usuario;
+                }
+            };
+            xhttp.open("GET", filename, true);
+            xhttp.send();
+        }
+    </script>
+</head>
+<body>
+    <h1>Primeira aplicação usando AJAX</h1>
+    <p id="textServer">Clique abaixo para alterar este texto.</p>
+
+    <form>
+        <input type="button" value="Alterar texto (XMLHttpRequest)" onclick="getTextServer()">
+    </form>
+</body>
+</html>

@@ -1,0 +1,81 @@
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(18, 18, 19);
+    color: #FFF;
+    height: 100vh;
+    padding: 10vh 10vw;
+}
+
+h1 {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    color: crimson;
+}
+
+.movieList{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    flex-flow: nowrap;
+    height: 400px;
+    margin-top: 10vh;
+    margin-right: 150px;
+}
+
+.movie {
+    width: 250px;
+    height: 300px;
+    border-radius: 8px;
+}
+
+.movie > img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 8px;
+}
+
+.movieInfo {
+    position: relative;
+    right: 100px;
+    background-color: rgb(44, 44, 50);
+    flex-direction: column;
+    gap: 8px;
+    display: none;
+    width: 300px;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.movie > img:hover + .movieInfo{
+    display: flex;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.movie > div > p {
+    margin: 0px;
+}
+
+.movie > div > p > span{
+    font-weight: 600;
+}

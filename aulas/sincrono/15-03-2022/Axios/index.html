@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios - Primeira aplicação</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function getTextServer() {
+            axios.get("user.json")
+            .then(response => document.getElementById("textServer").innerHTML = response.data.usuario)
+        }
+    </script>
+</head>
+<body>
+    <h1>Primeira aplicação usando Axios</h1>
+    <p id="textServer">Clique abaixo para alterar este texto.</p>
+    <form>
+        <input type="button" value="Alterar texto (Fetch)" onclick="getTextServer()">
+    </form>
+</body>
+</html>
